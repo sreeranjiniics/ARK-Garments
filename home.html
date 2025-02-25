@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARK Garments - Official Website</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: linear-gradient(to bottom, #001f4d, #0066cc);
+            color: #f0f0f0;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-bottom: 1px solid #004080;
+            
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+          margin-left: -920px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #cce6ff;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #66b3ff;
+        }
+
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('UPshutterstock1096478189.jpg') ;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: 2px solid #fff;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #fff;
+            color: #004080;
+        }
+
+        .section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+            background-color: rgba(0, 0, 51, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #cce6ff;
+        }
+
+        .section p {
+            font-size: 16px;
+            line-height: 1.7;
+            text-align: center;
+            color: #e0e0e0;
+            max-width: 900px;
+            margin: 0 auto 30px;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product {
+            text-align: center;
+            padding: 15px;
+            border: 1px solid #004080;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .product img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #66b3ff;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        .contact-form button {
+            padding: 12px;
+            background-color: #004080;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #0066cc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            font-size: 14px;
+            color: #cce6ff;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: #66b3ff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+       <a class="navbar-brand" href="#home">
+      <img src="logo.png" alt="Logo" style="width:40px";>
+    </a>
+        <div class="logo">ARK Garments</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#ourproducts">Our Products</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Discover Your Style with ARK Garments</h1>
+        <p>Premium quality clothing for every occasion.</p>
+        <a href="#ourproducts" class="btn">View Products</a>
+    </section>
+
+    <section class="section" id="about">
+        <h2>About Us</h2>
+        <p>ARK Garments Manufacturing Industries Co. Ltd. is dedicated to delivering premium quality garments that combine style, comfort, and durability. Our mission is to meet the diverse needs of our customers with innovative designs and sustainable manufacturing processes. With years of industry experience, we prioritize craftsmanship, customer satisfaction, and eco-friendly practices to set new standards in the garment industry. </p>
+    </section>
+
+    <section class="section" id="ourproducts">
+        <h2>Our Products</h2>
+        <div class="products">
+            <div class="product">
+               <img src="C:\Users\ACER\Desktop\aslam c,cpp\ARK\hoodies.jpg" alt="White Hoodie">
+               
+             
+            </div>
+            <div class="product">
+                <img src="91NLs-Q9BWL._AC_UY1100_.jpg" alt="Black Hoodie">
+           
+            </div>
+            <div class="product">
+                <img src="C:\Users\ACER\Desktop\aslam c,cpp\ARK\Blue_Tshirt.jpg" alt="Blue T-shirt">
+      
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="gallery">
+        <h2>Image Gallery</h2>
+        <div class="gallery">
+            <div class="gallery">
+            <img src="C:\Users\ACER\Desktop\aslam c,cpp\ARK\reflective-safety-clothes.jpg" alt="Gallery Image 1">
+            <img src="C:\Users\ACER\Desktop\aslam c,cpp\ARK\SLEEVELESS-25-scaled.jpg" alt="Gallery Image 2">
+            <img src="C:\Users\ACER\Desktop\aslam c,cpp\ARK\images.jpg" alt="Gallery Image 3">
+            <img src="C:\Users\ACER\Desktop\aslam c,cpp\ARK\istockphoto-172425631-612x612.jpg" alt="Gallery Image 4">
+            <img src="C:\Users\ACER\Desktop\aslam c,cpp\ARK\hmgoepprod.jpg" alt="Gallery Image 5">
+        </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 ARK Garments Manufacturing Industries Co. Ltd. All rights reserved.</p>
+       
+    </footer>
+</body>
+
+</html>
